@@ -1,0 +1,163 @@
+/**
+ * Slideshow styles
+ */
+
+// local vars
+$sl-btn-color: rgba( 255, 255, 255, 0.5 );
+$sl-text-color: #0f0f0f;
+$sl-hover-color: rgba( 255, 255, 255, 0.4 );
+$sl-active-color: #f0f0f0;
+$sl-btn-shadow: 0 1px 2px rgba( 0, 0, 0, 0.2 );
+$sl-back-char: "«";
+$sl-next-char: "»";
+$sl-fx-speed: 400ms;
+$sl-fx-ease: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+
+// next/back animations
+@keyframes sl-animate-next {
+    0% { opacity: 0; transform: translateX( 200px ); }
+  100% { opacity: 1; transform: translateX( 0 ); }
+}
+@keyframes sl-animate-back {
+    0% { opacity: 0; transform: translateX( -200px ); }
+  100% { opacity: 1; transform: translateX( 0 ); }
+}
+@keyframes sl-animate-fade {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+// main slideshow wrapper element
+.slideshow-wrap {
+  display: block;
+  position: relative;
+
+  // sub button container elements
+  .slideshow-nav,
+  .slideshow-back,
+  .slideshow-next {
+    display: block;
+    position: absolute;
+    text-align: center;
+    z-index: 3;
+
+    // control buttons
+    button {
+      display: inline-block;
+      overflow: hidden;
+      cursor: pointer;
+      font-family: inherit;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      text-align: center;
+      line-height: 1em;
+      margin: 0;
+      padding: 0;
+      width: 2em;
+      height: 2em;
+      color: $sl-text-color;
+      background-color: $sl-btn-color;
+      border-radius: 100px;
+      box-shadow: $sl-btn-shadow;
+      transition:
+        color $sl-fx-speed $sl-fx-ease,
+        border-color $sl-fx-speed $sl-fx-ease,
+        background-color $sl-fx-speed $sl-fx-ease,
+        opacity $sl-fx-speed $sl-fx-ease;
+
+      &:hover {
+        background-color: $sl-hover-color;
+      }
+      &:before {
+        display: inline-block;
+        font-size: 20px;
+        line-height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  // slide selector buttons on button
+  .slideshow-nav {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    button {
+      margin: 0 .5em;
+      width: 1em;
+      height: 1em;
+
+      &.slide-active {
+        background-color: $sl-active-color;
+      }
+    }
+  }
+
+  // back button
+  .slideshow-back {
+    display: none;
+    left: 0;
+    right: auto;
+    top: 40%;
+    pointer-events: none;
+    animation: sl-animate-back $sl-fx-speed $sl-fx-ease forwards;
+
+    button:before {
+      content: $sl-back-char;
+    }
+  }
+
+  // next button
+  .slideshow-next {
+    display: none;
+    left: auto;
+    right: 0;
+    top: 40%;
+    pointer-events: none;
+    animation: sl-animate-next $sl-fx-speed $sl-fx-ease forwards;
+
+    button:before {
+      content: $sl-next-char;
+    }
+  }
+
+  // only show back/next buttons on hover
+  &:hover .slideshow-back,
+  &:hover .slideshow-next {
+    pointer-events: auto;
+    display: block;
+  }
+
+  // list of slides
+  .slideshow-list {
+    display: block;
+    position: relative;
+    list-style: none;
+    z-index: 2;
+
+    // single slide container
+    .slideshow-item {
+      display: none;
+      transition: none;
+      min-height: 200px;
+      animation: sl-animate-fade $sl-fx-speed linear forwards;
+
+      // going next
+      &.slide-next {
+        animation: sl-animate-next $sl-fx-speed $sl-fx-ease forwards;
+      }
+      // going back
+      &.slide-back {
+        animation: sl-animate-back $sl-fx-speed $sl-fx-ease forwards;
+      }
+      // active slide
+      &.slide-active {
+        display: block;
+      }
+    }
+  }
+
+}

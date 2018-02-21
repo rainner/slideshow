@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Slideshow JS</title>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="IE=Edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="description" id="description" content="Demo of a simple slideshow with Javascript using animate.css in slide transitions." />
+
+  <link href="favicon.ico" rel="shortcut icon" />
+  <link type="text/css" rel="stylesheet" href="public/bundles/app.min.css" />
+  <link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+
+</head>
+<body id="doc">
+
+  <div class="app">
+
+    <header>
+      <div class="container">
+        <h1>Slideshow Demo</h1>
+        <p>Demo of a simple slideshow with Javascript using <a href="https://github.com/daneden/animate.css" target="_blank">animate.css</a> in slide transitions.</p>
+      </div>
+    </header>
+
+    <hr />
+
+    <main>
+      <div class="container">
+
+        <!-- slideshow markup -->
+        <div class="slideshow-wrap" style="display: none">
+          <div class="slideshow-back"></div>
+          <div class="slideshow-next"></div>
+          <div class="slideshow-nav"></div>
+          <div class="slideshow-list">
+            <!-- slide -->
+            <div class="slideshow-item">
+              <div class="flex-row">
+                <div class="flex-item flex-40 animated bounceIn">
+                  <img src="//placeimg.com/640/480/tech?x=123" alt="Image" />
+                </div>
+                <div class="flex-item flex-60 animated zoomInDown">
+                  <h2>Excepteur sint</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- slide -->
+            <div class="slideshow-item">
+              <div class="flex-row">
+                <div class="flex-item flex-40 animated bounceIn">
+                  <img src="//placeimg.com/640/480/tech?x=456" alt="Image" />
+                </div>
+                <div class="flex-item flex-60 animated zoomInUp">
+                  <h2>Duis aute</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <hr />
+
+    <footer>
+      <div class="container">
+        <a href="https://github.com/rainner/slideshow">View source on Github</a>
+        <span>&nbsp;|&nbsp;</span>
+        <a href="https://twitter.com/raintek_" target="_blank">@raintek_</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- js bundle -->
+  <script src="public/bundles/app.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/**
+ * App sass entry file.
+ */
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  appearance: none;
+  text-transform: none;
+  text-shadow: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+html, body {
+  display: block;
+  position: relative;
+  min-height: 100vh;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  background-color: #20292f;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5em;
+  color: #c0c9cf;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+hr {
+  display: block;
+  margin: 1em 0;
+  border: 0;
+  border-top: 2px solid rgba( 255, 255, 255, 0.1 );
+}
+
+h1, h2, h3, p {
+  display: block;
+  margin: 1em 0;
+}
+
+a {
+  text-decoration: none;
+  color: #e09090;
+}
+
+.app {
+  display: block;
+  padding: 100px 0;
+}
+
+.container {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.flex-row {
+  display: block;
+  flex-direction: row;
+
+  .flex-item {
+    margin-bottom: 2em;
+  }
+
+  @media only screen and (min-width: 720px) {
+    display: flex;
+
+    .flex-item {
+      margin-right: 2em;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    .flex-1 { flex: 1; }
+    .flex-10 { width: 10%; }
+    .flex-20 { width: 20%; }
+    .flex-30 { width: 30%; }
+    .flex-40 { width: 40%; }
+    .flex-50 { width: 50%; }
+    .flex-60 { width: 60%; }
+    .flex-70 { width: 70%; }
+    .flex-80 { width: 80%; }
+    .flex-90 { width: 90%; }
+    .flex-100 { width: 100%; }
+  }
+}
+
+footer {
+  text-align: center;
+}
