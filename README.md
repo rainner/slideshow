@@ -4,7 +4,9 @@
 
 # Slideshow
 
-A simple slideshow JS class for controlling a list of slides by giving you the basic back/next/select/swipe controls to toggle the active slide, and leaving the animation part up to you that can be added using CSS animatons to control how each slide enters and leaves.
+![Slideshow](https://raw.githubusercontent.com/rainner/slideshow/master/thumb.jpg)
+
+A simple slideshow JS class for controlling a list of slides by giving you the basic back/next/select/swipe controls to toggle the active slide, leaving the animation part up to you that can be added using CSS animatons to control how each slide enters and leaves.
 
 [Check out the demo][demo]
 
